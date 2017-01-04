@@ -31,7 +31,7 @@ public class IntArrayWorker
 	  return count;
   }
   
-  public int getLargest()
+  public int getLargest()	
   {
 	int largest = Integer.MIN_VALUE;
 	
@@ -48,6 +48,22 @@ public class IntArrayWorker
 	
 	return largest;
   }
+  
+  public int getColTotal()
+  {
+	  int total = 0;
+	  
+	  for(int row = 0; row < matrix.length; row++)
+	  {
+		  if()
+		  {
+			  
+		  }
+	  }
+	  
+	  return total;
+  }
+  
   /**
    * Method to return the total 
    * @return the total of the values in the array
