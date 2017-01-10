@@ -55,9 +55,9 @@ public class IntArrayWorker
 //	  
 //	  for(int row = 0; row < matrix.length; row++)
 //	  {
-//		  if()
+//		  if(row)
 //		  {
-//			  
+//			  return total;
 //		  }
 //	  }
 //	  
