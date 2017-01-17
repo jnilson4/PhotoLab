@@ -49,20 +49,17 @@ public class IntArrayWorker
 	return largest;
   }
   
-//  public int getColTotal()
-//  {
-//	  int total = 0;
-//	  
-//	  for(int row = 0; row < matrix.length; row++)
-//	  {
-//		  if(row)
-//		  {
-//			  return total;
-//		  }
-//	  }
-//	  
-//	  return total;
-//  }
+  public int getColTotal(int col)
+  {
+	  int total = 0;
+	  
+	  for(int row = 0; row < matrix.length; row++)
+	  {
+		  total += matrix[row][col];
+	  }
+	  
+	  return total;
+  }
   
   /**
    * Method to return the total 
