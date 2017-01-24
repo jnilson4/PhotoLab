@@ -284,6 +284,35 @@ public class Picture extends SimplePicture
   }
   
   
+  public void ultraEdgeDetection(int edgeDist)
+  {
+	  Pixel leftPixel = null;
+	  Pixel rightPixel = null;
+	  Pixel rightPixel2 = null;
+	  Pixel[][] pixels = this.getPixels2D();
+	  Color rightColor = null;
+	  Color secondRight = null;
+	  for(int row = 0; row < pixels.length; row++)
+	  {
+		  for(int col = 0; col < pixels[0].length-1; col++)
+		  {
+			  leftPixel = pixels[row][col];
+			  rightPixel = pixels[row][col+1];
+			  rightPixel2 = pixels[row][col+2];
+			  rightColor = rightPixel.getColor();
+			  secondRight = rightPixel2.getColor();
+			  if(leftPixel.colorDistance(rightColor) > edgeDist && leftPixel.colorDistance(secondRight) > edgeDist)
+			  {
+				  leftPixel.setColor(Color.BLACK);
+			  }
+			  else
+			  {
+				  leftPixel.setColor(Color.WHITE);
+			  }
+		  }
+	  }
+  }
+  
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
     */
