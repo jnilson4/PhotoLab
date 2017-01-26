@@ -117,6 +117,14 @@ public class PictureTester
 	  gull.explore();
   }
   
+  public static void testMirrorArms()
+  {
+	  Picture snowman = new Picture("snowman.jpg");
+	  snowman.explore();
+	  snowman.mirrorArms();
+	  snowman.explore();
+  }
+  
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
@@ -130,6 +138,18 @@ public class PictureTester
 	Picture swan = new Picture("swan.jpg");
 	swan.ultraEdgeDetection(10);
 	swan.explore();
+  }
+  
+  public static void testFilters()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.explore();
+	  beach.keepOnlyBlue();
+	  beach.fullRandomGreen();
+	  beach.mirrorVertical();
+	  beach.mirrorHorizontalBottomToTop();
+	  beach.mirrorArms();
+	  beach.explore();
   }
   
   /** Main method for testing.  Every class can have a main
@@ -167,5 +187,6 @@ public class PictureTester
     //testGetAverageForColumn(0);
 	//testFullRandom();
 	//testFullRandomGreen();
+	//testFilters();
   }
 }
