@@ -84,12 +84,37 @@ public class PictureTester
     temple.explore();
   }
   
+  public static void testFullRandom()
+  {
+	  Picture msg = new Picture("msg.jpg");
+	  msg.explore();
+	  msg.fullRandom();
+	  msg.explore();
+  }
+  
+  public static void testFullRandomGreen()
+  {
+	  Picture thru = new Picture("thruDoor.jpg");
+	  thru.explore();
+	  thru.fullRandomGreen();
+	  thru.fullRandom();
+	  thru.explore();
+  }
+  
   /** Method to test the collage method */
   public static void testCollage()
   {
     Picture canvas = new Picture("640x480.jpg");
     canvas.createCollage();
     canvas.explore();
+  }
+  
+  public static void testMirrorGull()
+  {
+	  Picture gull = new Picture("seagull.jpg");
+	  gull.explore();
+	  gull.mirrorGull();
+	  gull.explore();
   }
   
   /** Method to test edgeDetection */
@@ -131,14 +156,16 @@ public class PictureTester
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
-    testEdgeDetection();
+    //testEdgeDetection();
     //testEdgeDetection2();
-	testUltraEdgeDetection();
+	//testUltraEdgeDetection();
     //testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
+	//testFullRandom();
+	//testFullRandomGreen();
   }
 }
