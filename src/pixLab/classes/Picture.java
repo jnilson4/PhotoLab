@@ -447,16 +447,73 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void valentinesFilter()
+  {
+	  Picture valentines = new Picture("valentines5.png");
+//	  this.copy(valentines, 200, 0);
+//	  this.copy(valentines, 300, 0);
+//	  this.copy(valentines, 700, 0);
+	  this.write("valentines.jpg");
+	  this.addMessage("Valentines Day aka Single Coders Write code", 1, 50);
+	  this.addMessage("all day alone and fail at it day.", 1, 150);
+  }
+  
+  public void glitchArt()
+  {
+	  Pixel[][] currentPicture = this.getPixels2D();
+	  for(Pixel [] row : currentPicture)
+	  {
+		  for(Pixel currentPixel : row)
+		  {
+			  int green = (int)(Math.random() * 934);
+			  int blue = (int)(Math.random() * 29475);
+			  
+			  currentPixel.setGreen(green);
+		  }
+	  }
+	  
+	  Pixel[][] pixels = this.getPixels2D();
+	  Pixel topPixel = null;
+	  Pixel bottomPixel = null;
+	  int height = pixels.length;
+	  for(int col = pixels[0].length - 1; col >= 0; col--)
+	  {
+		  for(int row = 0; row < height / 2 - 1; row++)
+		  {
+			  topPixel = pixels[row][col];
+			  bottomPixel = pixels[height - row - 5][col];
+			  topPixel.setColor(bottomPixel.getColor());
+		  }
+	  }
+	  
+	    Pixel leftPixel = null;
+	    Pixel rightPixel = null;
+	    int width = pixels[0].length;
+	    for (int row = 0; row < pixels.length; row++)
+	    {
+	      for (int col = 0; col < width / 2; col++)
+	      {
+	        leftPixel = pixels[row][col];
+	        rightPixel = pixels[row][width - 1 - col];
+	        rightPixel.setColor(leftPixel.getColor());
+	      }
+	    } 
+  }
   
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
   public static void main(String[] args) 
   {
-    Picture beach = new Picture("beach.jpg");
-    beach.explore();
-    beach.zeroBlue();
-    beach.explore();
+//    Picture beach = new Picture("beach.jpg");
+//    beach.explore();
+//    beach.zeroBlue();
+//    beach.explore();
+	  
+	  Picture lion = new Picture("femaleLionAndHall.jpg");
+	  lion.explore();
+	  lion.glitchArt();
+	  lion.explore();
   }
   
 } // this } is the end of class Picture, put all new methods before this
