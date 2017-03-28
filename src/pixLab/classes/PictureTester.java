@@ -152,6 +152,17 @@ public class PictureTester
 	  beach.explore();
   }
   
+  public static void testSteganography()
+  {
+	  Picture source = new Picture("ironman.png");
+	  source.explore();
+	  Picture hidden = new Picture("hiddenpicture.png");
+	  source.encode(hidden);
+	  source.explore();
+	  hidden.explore();
+	  source.decode();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -188,5 +199,6 @@ public class PictureTester
 	//testFullRandom();
 	//testFullRandomGreen();
 	//testFilters();
+	  testSteganography();
   }
 }
