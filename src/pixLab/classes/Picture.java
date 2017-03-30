@@ -560,6 +560,12 @@ public class Picture extends SimplePicture
 	  this.explore();
   }
   
+  public void chromakey(Picture fromPic)
+  {
+	  Pixel[][] toPixels = this.getPixels2D();
+	  Pixel[][] fromPixels = fromPic.getPixels2D();
+  }
+  
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
